@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gayatri Ambhorkar | Data & Database Analyst Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 30px 0px rgba(6, 182, 212, 0.4);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-100 antialiased selection:bg-cyan-500 selection:text-navy-950">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#hero" class="text-xl font-bold tracking-tight text-white flex items-center gap-2 group">
+                    <span class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-sm font-mono group-hover:bg-cyan-500 group-hover:text-navy-950 transition-all duration-300">GA</span>
+                    <span class="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Gayatri Ambhorkar</span>
+                </a>
+                
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-1 items-center">
+                    <a href="#about" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">About</a>
+                    <a href="#skills" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Skills</a>
+                    <a href="#projects" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Projects</a>
+                    <a href="#experience" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Experience</a>
+                    <a href="#certifications" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Certifications</a>
+                    <a href="#contact" class="ml-4 px-4 py-2 text-sm font-medium bg-cyan-500 text-navy-950 rounded-lg hover:bg-cyan-400 font-semibold transition-all shadow-lg shadow-cyan-500/20">Contact Me</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-navy-900/95 px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800">About</a>
+            <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800">Skills</a>
+            <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800">Projects</a>
+            <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800">Experience</a>
+            <a href="#certifications" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800">Certifications</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-cyan-400 bg-cyan-500/10 border border-cyan-500/20">Contact Me</a>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-[90vh] flex items-center justify-center py-20 overflow-hidden">
+            <!-- Background Glow & Grid Overlay -->
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-8 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold tracking-wider uppercase">
+                            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                            Available for Entry-Level Roles
+                        </div>
+
+                        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                            Hi, I'm <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">Gayatri Ambhorkar</span>
+                        </h1>
+
+                        <p class="text-xl sm:text-2xl font-medium text-slate-300">
+                            Data Analyst & Entry-Level Database Analyst
+                        </p>
+
+                        <p class="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed">
+                            Electronics & Telecommunication Engineering Graduate (2026) specializing in <strong class="text-slate-200">SQL, PostgreSQL, Python</strong>, and <strong class="text-slate-200">Power BI</strong>. Driven by a rigorous testing mindset to extract, clean, and convert raw data into high-value business insights.
+                        </p>
+
+                        <!-- Contact Badges -->
+                        <div class="flex flex-wrap gap-4 text-sm text-slate-300 pt-2">
+                            <div class="flex items-center gap-2 bg-slate-800/60 px-3 py-1.5 rounded-lg border border-slate-700/50">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-cyan-400"></i>
+                                <span>Nagpur, Maharashtra</span>
+                            </div>
+                            <a href="mailto:gayatri.ambhorkar0905@gmail.com" class="flex items-center gap-2 bg-slate-800/60 px-3 py-1.5 rounded-lg border border-slate-700/50 hover:border-cyan-500/40 hover:text-cyan-400 transition-colors">
+                                <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+                                <span>gayatri.ambhorkar0905@gmail.com</span>
+                            </a>
+                            <a href="tel:+918668905069" class="flex items-center gap-2 bg-slate-800/60 px-3 py-1.5 rounded-lg border border-slate-700/50 hover:border-cyan-500/40 hover:text-cyan-400 transition-colors">
+                                <i data-lucide="phone" class="w-4 h-4 text-cyan-400"></i>
+                                <span>+91 8668905069</span>
+                            </a>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-wrap gap-4 pt-4">
+                            <a href="#projects" class="px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-navy-950 font-bold transition-all shadow-lg shadow-cyan-500/25 flex items-center gap-2">
+                                <i data-lucide="folder-kanban" class="w-5 h-5"></i>
+                                View Projects
+                            </a>
+                            <a href="#contact" class="px-6 py-3 rounded-lg glass-card hover:bg-slate-800 text-white font-medium transition-all flex items-center gap-2">
+                                <i data-lucide="send" class="w-5 h-5 text-cyan-400"></i>
+                                Contact Me
+                            </a>
+                            <button onclick="window.print()" class="px-6 py-3 rounded-lg border border-slate-700 hover:border-cyan-500/50 text-slate-300 hover:text-white font-medium transition-all flex items-center gap-2 bg-slate-900/50">
+                                <i data-lucide="download" class="w-5 h-5 text-cyan-400"></i>
+                                Print / Save Resume
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Column Interactive SQL Snippet Card -->
+                    <div class="lg:col-span-4">
+                        <div class="glass-card rounded-2xl p-5 border border-slate-700/80 shadow-2xl relative">
+                            <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-700/60">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                                    <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                                    <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                                    <span class="text-xs font-mono text-slate-400 ml-2">database_query.sql</span>
+                                </div>
+                                <span class="text-xs font-mono text-cyan-400 font-semibold">PostgreSQL 16</span>
+                            </div>
+
+                            <pre class="font-mono text-xs sm:text-sm text-slate-300 overflow-x-auto leading-relaxed space-y-1">
+<span class="text-purple-400">WITH</span> SalesSummary <span class="text-purple-400">AS</span> (
+  <span class="text-purple-400">SELECT</span> 
+    c.customer_id,
+    c.name,
+    <span class="text-cyan-400">SUM</span>(p.amount) <span class="text-purple-400">AS</span> total_spent,
+    <span class="text-cyan-400">ROW_NUMBER</span>() <span class="text-purple-400">OVER</span> (
+      <span class="text-purple-400">ORDER BY SUM</span>(p.amount) <span class="text-purple-400">DESC</span>
+    ) <span class="text-purple-400">AS</span> rank
+  <span class="text-purple-400">FROM</span> customers c
+  <span class="text-purple-400">JOIN</span> orders o <span class="text-purple-400">ON</span> c.id = o.customer_id
+  <span class="text-purple-400">JOIN</span> payments p <span class="text-purple-400">ON</span> o.id = p.order_id
+  <span class="text-purple-400">GROUP BY</span> c.customer_id, c.name
+)
+<span class="text-purple-400">SELECT</span> * <span class="text-purple-400">FROM</span> SalesSummary
+<span class="text-purple-400">WHERE</span> rank &lt;= 5;
+</pre>
+
+                            <div class="mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs text-slate-400">
+                                <span class="flex items-center gap-1.5 text-emerald-400">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4"></i> Query Execution: 12ms
+                                </span>
+                                <span>Status: Clean Data</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 bg-slate-950/50 border-y border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">Professional Profile</h2>
+                    <p class="text-3xl sm:text-4xl font-bold text-white">About Gayatri</p>
+                    <div class="w-16 h-1 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Bio & Summary Card -->
+                    <div class="lg:col-span-7 glass-card p-6 sm:p-8 rounded-2xl space-y-6">
+                        <h3 class="text-2xl font-bold text-white flex items-center gap-3">
+                            <i data-lucide="user" class="w-6 h-6 text-cyan-400"></i>
+                            Career Objective & Summary
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            I am an <strong class="text-cyan-300">Electronics and Telecommunication Engineering graduate (2026)</strong> from Cummins College of Engineering for Women, Nagpur. With a strong foundation in SQL, PostgreSQL, Python, and statistical modeling, I am actively seeking an entry-level <strong class="text-cyan-300">Database Analyst / Data Analyst</strong> position.
+                        </p>
+                        <p class="text-slate-300 leading-relaxed">
+                            My core expertise revolves around collecting, cleaning, validating, and analyzing data from relational databases, as well as transforming raw datasets into intuitive D3.js visual tools, SPSS analytical models, and Power BI dashboards. I bring a detail-oriented, testing mindset to ensure data accuracy, normalization, and integrity across all data workflows.
+                        </p>
+
+                        <!-- Key Highlights -->
+                        <div class="pt-4 border-t border-slate-700/60">
+                            <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">Leadership & Key Highlights</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-navy-900/80 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+                                    <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+                                        <i data-lucide="award" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-sm font-semibold text-white">LPF Scholar</h5>
+                                        <p class="text-xs text-slate-400">Lila Poonawalla Foundation scholarship for academic excellence.</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-navy-900/80 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+                                    <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+                                        <i data-lucide="users" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-sm font-semibold text-white">Event Head</h5>
+                                        <p class="text-xs text-slate-400">Robotics Club Head – coordinated tech events & logistics.</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-navy-900/80 p-4 rounded-xl border border-slate-800 flex items-start gap-3 sm:col-span-2">
+                                    <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+                                        <i data-lucide="code-2" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-sm font-semibold text-white">Avishkar 2.0 Hackathon</h5>
+                                        <p class="text-xs text-slate-400">Participated in Inter-College Hackathon designing & engineering technical solutions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Sidebar Card -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-700/80">
+                            <h3 class="text-xl font-bold text-white flex items-center gap-3 mb-6">
+                                <i data-lucide="graduation-cap" class="w-6 h-6 text-cyan-400"></i>
+                                Education Background
+                            </h3>
+
+                            <div class="relative border-l-2 border-cyan-500/30 pl-6 space-y-8">
+                                <!-- B.E Degree -->
+                                <div class="relative">
+                                    <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-navy-900"></span>
+                                    <span class="text-xs font-semibold text-cyan-400">Nov 2022 - June 2026</span>
+                                    <h4 class="text-base font-bold text-white mt-0.5">B.E. in Electronics & Telecommunication</h4>
+                                    <p class="text-sm text-slate-300">Cummins College of Engineering for Women, Nagpur</p>
+                                    <p class="text-xs text-slate-400 mt-1">Nagpur University | <strong class="text-emerald-400">CGPA: 7.0</strong></p>
+                                </div>
+
+                                <!-- 12th Grade -->
+                                <div class="relative">
+                                    <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-600 ring-4 ring-navy-900"></span>
+                                    <span class="text-xs text-slate-400">Class 12th (State Board)</span>
+                                    <h4 class="text-sm font-semibold text-white">Higher Secondary Certificate</h4>
+                                    <p class="text-xs text-emerald-400 font-semibold mt-0.5">Score: 64.50%</p>
+                                </div>
+
+                                <!-- 10th Grade -->
+                                <div class="relative">
+                                    <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-600 ring-4 ring-navy-900"></span>
+                                    <span class="text-xs text-slate-400">Class 10th (State Board)</span>
+                                    <h4 class="text-sm font-semibold text-white">Secondary School Certificate</h4>
+                                    <p class="text-xs text-emerald-400 font-semibold mt-0.5">Score: 80.60%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data Quality Banner -->
+                        <div class="bg-gradient-to-r from-cyan-950/60 to-slate-900/80 p-6 rounded-2xl border border-cyan-500/30">
+                            <div class="flex items-center gap-3 text-cyan-400 mb-2">
+                                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                                <h4 class="font-bold text-white">Testing & Quality Mindset</h4>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                Experience with manual validation, data integrity checks, and Playwright automated scripts to ensure upstream data quality before building BI reporting models.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">Technical Capabilities</h2>
+                    <p class="text-3xl sm:text-4xl font-bold text-white">Skills & Expertise</p>
+                    <div class="w-16 h-1 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Skill Card 1: Databases -->
+                    <div class="glass-card p-6 rounded-2xl transition-all duration-300 glow-hover">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5">
+                            <i data-lucide="database" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Databases & SQL</h3>
+                        <p class="text-xs text-slate-400 mb-4">Relational modeling, complex queries, and data extraction.</p>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">SQL Joins & Subqueries</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">PostgreSQL</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">CTEs & Window Functions</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Normalization (1NF-3NF)</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">ER Modeling</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Query Optimization</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 2: Statistical Analysis -->
+                    <div class="glass-card p-6 rounded-2xl transition-all duration-300 glow-hover">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5">
+                            <i data-lucide="line-chart" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Statistical Analysis</h3>
+                        <p class="text-xs text-slate-400 mb-4">Hypothesis testing, clustering, and predictive forecasting.</p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">IBM SPSS</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Linear Regression</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Hypothesis Testing</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">ANOVA</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Clustering</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Descriptive Stats</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 3: Python for Data -->
+                    <div class="glass-card p-6 rounded-2xl transition-all duration-300 glow-hover">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5">
+                            <i data-lucide="binary" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Python for Data</h3>
+                        <p class="text-xs text-slate-400 mb-4">Data cleaning, EDA, and programmatic processing.</p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Pandas</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">NumPy</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Matplotlib</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Seaborn</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">EDA</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Automation Scripts</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 4: BI & Reporting -->
+                    <div class="glass-card p-6 rounded-2xl transition-all duration-300 glow-hover">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5">
+                            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">BI & Visualization</h3>
+                        <p class="text-xs text-slate-400 mb-4">Interactive visual dashboards and performance reports.</p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Power BI</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Power Query</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Microsoft Excel</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">D3.js Visualization</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Executive Reports</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 5: Data Quality & Testing -->
+                    <div class="glass-card p-6 rounded-2xl transition-all duration-300 glow-hover">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5">
+                            <i data-lucide="check-square" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Data Quality & Testing</h3>
+                        <p class="text-xs text-slate-400 mb-4">Ensuring dataset fidelity, validation, and automated checks.</p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Data Validation</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Integrity Auditing</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Manual Testing</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Playwright (Python)</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 6: Electronics & Web -->
+                    <div class="glass-card p-6 rounded-2xl transition-all duration-300 glow-hover">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Engineering & Web</h3>
+                        <p class="text-xs text-slate-400 mb-4">Front-end fundamentals, MATLAB, and hardware tools.</p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">HTML5 / CSS3</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">React.js</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">MATLAB</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">Basic C</span>
+                            <span class="px-2.5 py-1 rounded-md bg-navy-900 text-cyan-300 border border-slate-700 text-xs">IoT / Sensor Data</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-slate-950/50 border-t border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">Featured Analytics & Engineering Projects</h2>
+                        <p class="text-3xl sm:text-4xl font-bold text-white">Project Showcase</p>
+                    </div>
+
+                    <!-- Category Filter Buttons -->
+                    <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="project-filters">
+                        <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-cyan-500 text-navy-950 transition-all">All</button>
+                        <button onclick="filterProjects('sql')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">SQL & DB</button>
+                        <button onclick="filterProjects('python')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">Python & Statistics</button>
+                        <button onclick="filterProjects('bi')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">BI & Visuals</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+                    
+                    <!-- Project 1 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-700/70 hover:border-cyan-500/50 transition-all duration-300 flex flex-col" data-tags="sql python bi">
+                        <div class="p-6 space-y-4 flex-1">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Full Stack Visualizer</span>
+                                <i data-lucide="network" class="w-5 h-5 text-slate-400"></i>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white">Chain Viz - Supply Chain Visualizer</h3>
+                            
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Built an end-to-end supply chain visualizer leveraging PostgreSQL as the primary analytical store and D3.js for interactive topological dashboards.
+                            </p>
+
+                            <ul class="space-y-2 text-xs text-slate-400">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                                    <span>Engineered PostgreSQL data layer to efficiently store, query, and trace supply chain inventory flow records.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                                    <span>Wrote complex SQL joins & aggregate queries feeding real-time D3.js front-end dashboards.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                                    <span>Utilized Python for data manipulation between the backend PostgreSQL instance and React UI.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-6 bg-slate-900/60 border-t border-slate-800 flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">PostgreSQL</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">Python</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">React.js</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">D3.js</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-700/70 hover:border-cyan-500/50 transition-all duration-300 flex flex-col" data-tags="sql python bi">
+                        <div class="p-6 space-y-4 flex-1">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Data Modeling & BI</span>
+                                <i data-lucide="shopping-cart" class="w-5 h-5 text-slate-400"></i>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white">Retail Sales Database & Analytics Dashboard</h3>
+                            
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Architected a fully normalized relational database and conducted thorough exploratory analytics to derive customer buying trends.
+                            </p>
+
+                            <ul class="space-y-2 text-xs text-slate-400">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                                    <span>Designed a normalized relational database (up to 3NF) complete with ER diagrams covering customers, orders, products, and payments.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                                    <span>Executed optimized SQL queries utilizing CTEs, window functions, and subqueries for top-product and cohort retention analysis.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                                    <span>Cleaned data with Pandas & NumPy; visual EDA done with Matplotlib/Seaborn, culminating in an executive Power BI dashboard.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-6 bg-slate-900/60 border-t border-slate-800 flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">PostgreSQL</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">SQL CTEs</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">Pandas / Seaborn</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">Power BI</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-700/70 hover:border-cyan-500/50 transition-all duration-300 flex flex-col" data-tags="sql python">
+                        <div class="p-6 space-y-4 flex-1">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20">Statistical Modeling</span>
+                                <i data-lucide="sigma" class="w-5 h-5 text-slate-400"></i>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white">Statistical Analysis & Data Quality Audit</h3>
+                            
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Combined PostgreSQL data extraction with IBM SPSS statistical testing to perform auditing and predictive forecasting on public datasets.
+                            </p>
+
+                            <ul class="space-y-2 text-xs text-slate-400">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                                    <span>Ran rigorous SQL quality checks (null values, duplicates, constraint violations) prior to dataset ingestion.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                                    <span>Performed Regression Analysis, Hypothesis Testing, ANOVA, and K-Means Clustering in IBM SPSS.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                                    <span>Generated a forecasting model and detailed executive report highlighting statistical variance and recommendations.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-6 bg-slate-900/60 border-t border-slate-800 flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">IBM SPSS</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">PostgreSQL</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">Regression</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">ANOVA</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-700/70 hover:border-cyan-500/50 transition-all duration-300 flex flex-col" data-tags="python bi">
+                        <div class="p-6 space-y-4 flex-1">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">API Application</span>
+                                <i data-lucide="cloud-sun" class="w-5 h-5 text-slate-400"></i>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white">Forecastly - Weather Application</h3>
+                            
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Responsive web application that interfaces with RESTful APIs to deliver clean weather insights and metrics.
+                            </p>
+
+                            <ul class="space-y-2 text-xs text-slate-400">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                                    <span>Integrated OpenWeatherMap API for live temperature, humidity, and atmospheric metrics.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                                    <span>Structured API payload responses and efficiently handled state and error conditions in React.js.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-6 bg-slate-900/60 border-t border-slate-800 flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">React.js</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">OpenWeatherMap API</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300">JavaScript</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 border-t border-slate-800/80 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">Practical Exposure</h2>
+                    <p class="text-3xl sm:text-4xl font-bold text-white">Work Experience</p>
+                    <div class="w-16 h-1 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="max-w-3xl mx-auto">
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl relative border border-slate-700/80">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-700/60 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Intern - IoT and Home Automation</h3>
+                                <p class="text-cyan-400 font-medium text-sm">Yuva</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700 w-fit">
+                                Hands-On Internship
+                            </span>
+                        </div>
+
+                        <ul class="mt-6 space-y-3 text-slate-300 text-sm">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="radio" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
+                                <span>Worked directly on IoT hardware setups and smart home automation architectures utilizing the <strong>Ubidots</strong> cloud platform.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="line-chart" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
+                                <span>Collected, aggregated, and monitored real-time sensor data telemetry streams on cloud visual dashboards.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="database" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
+                                <span>Gained practical end-to-end understanding of live data pipeline flow—from hardware edge devices to central databases and visual dashboards.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Achievements -->
+        <section id="certifications" class="py-20 bg-slate-950/50 border-t border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">Qualifications & Milestones</h2>
+                    <p class="text-3xl sm:text-4xl font-bold text-white">Certifications & Achievements</p>
+                    <div class="w-16 h-1 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Certifications Block -->
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center justify-between">
+                            <span class="flex items-center gap-3">
+                                <i data-lucide="file-check" class="w-6 h-6 text-cyan-400"></i>
+                                Professional Certifications
+                            </span>
+                            <span class="text-xs font-normal text-slate-400">Click to view credential</span>
+                        </h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <a href="https://example.com/certificates/sql" target="_blank" rel="noopener noreferrer" class="p-3 bg-navy-900/80 hover:bg-slate-800/90 rounded-xl border border-slate-800 hover:border-cyan-500/50 text-sm font-medium text-slate-200 hover:text-cyan-300 transition-all group flex items-center justify-between">
+                                <span class="flex items-center gap-2">
+                                    <i data-lucide="badge-check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                                    SQL Certification
+                                </span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                            </a>
+
+                            <a href="https://example.com/certificates/python-udemy" target="_blank" rel="noopener noreferrer" class="p-3 bg-navy-900/80 hover:bg-slate-800/90 rounded-xl border border-slate-800 hover:border-cyan-500/50 text-sm font-medium text-slate-200 hover:text-cyan-300 transition-all group flex items-center justify-between">
+                                <span class="flex items-center gap-2">
+                                    <i data-lucide="badge-check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                                    Python (Udemy)
+                                </span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                            </a>
+
+                            <a href="https://example.com/certificates/power-bi" target="_blank" rel="noopener noreferrer" class="p-3 bg-navy-900/80 hover:bg-slate-800/90 rounded-xl border border-slate-800 hover:border-cyan-500/50 text-sm font-medium text-slate-200 hover:text-cyan-300 transition-all group flex items-center justify-between">
+                                <span class="flex items-center gap-2">
+                                    <i data-lucide="badge-check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                                    Power BI - Power Query Basics
+                                </span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                            </a>
+
+                            <a href="https://example.com/certificates/ibm-ai" target="_blank" rel="noopener noreferrer" class="p-3 bg-navy-900/80 hover:bg-slate-800/90 rounded-xl border border-slate-800 hover:border-cyan-500/50 text-sm font-medium text-slate-200 hover:text-cyan-300 transition-all group flex items-center justify-between">
+                                <span class="flex items-center gap-2">
+                                    <i data-lucide="badge-check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                                    IBM AI Fundamentals
+                                </span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                            </a>
+
+                            <a href="https://example.com/certificates/cisco-networks" target="_blank" rel="noopener noreferrer" class="p-3 bg-navy-900/80 hover:bg-slate-800/90 rounded-xl border border-slate-800 hover:border-cyan-500/50 text-sm font-medium text-slate-200 hover:text-cyan-300 transition-all group flex items-center justify-between">
+                                <span class="flex items-center gap-2">
+                                    <i data-lucide="badge-check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                                    Cisco - Communication Networks
+                                </span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                            </a>
+
+                            <a href="https://example.com/certificates/matlab" target="_blank" rel="noopener noreferrer" class="p-3 bg-navy-900/80 hover:bg-slate-800/90 rounded-xl border border-slate-800 hover:border-cyan-500/50 text-sm font-medium text-slate-200 hover:text-cyan-300 transition-all group flex items-center justify-between">
+                                <span class="flex items-center gap-2">
+                                    <i data-lucide="badge-check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                                    MATLAB Onramp
+                                </span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                            </a>
+
+                            <a href="https://example.com/certificates/arduino" target="_blank" rel="noopener noreferrer" class="p-3 bg-navy-900/80 hover:bg-slate-800/90 rounded-xl border border-slate-800 hover:border-cyan-500/50 text-sm font-medium text-slate-200 hover:text-cyan-300 transition-all group flex items-center justify-between">
+                                <span class="flex items-center gap-2">
+                                    <i data-lucide="badge-check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                                    Arduino Fundamentals (Udemy)
+                                </span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                            </a>
+
+                            <a href="https://example.com/certificates/html-css" target="_blank" rel="noopener noreferrer" class="p-3 bg-navy-900/80 hover:bg-slate-800/90 rounded-xl border border-slate-800 hover:border-cyan-500/50 text-sm font-medium text-slate-200 hover:text-cyan-300 transition-all group flex items-center justify-between">
+                                <span class="flex items-center gap-2">
+                                    <i data-lucide="badge-check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                                    HTML/CSS Certification
+                                </span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Honors & Positions Block -->
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                            <i data-lucide="trophy" class="w-6 h-6 text-cyan-400"></i>
+                            Achievements & Leadership
+                        </h3>
+
+                        <div class="space-y-4">
+                            <div class="p-4 bg-navy-900/80 rounded-xl border border-slate-800">
+                                <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider">Scholarship Award</span>
+                                <h4 class="text-base font-bold text-white mt-1">Lila Poonawalla Foundation (LPF) Scholar</h4>
+                                <p class="text-xs text-slate-400 mt-1">Awarded prestigious scholarship in recognition of consistent academic excellence and technical potential.</p>
+                            </div>
+
+                            <div class="p-4 bg-navy-900/80 rounded-xl border border-slate-800">
+                                <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider">Position of Responsibility</span>
+                                <h4 class="text-base font-bold text-white mt-1">Event Management Head – Robotics Club</h4>
+                                <p class="text-xs text-slate-400 mt-1">Spearheaded logistics, event coordination, and participant management for college-wide technical competitions.</p>
+                            </div>
+
+                            <div class="p-4 bg-navy-900/80 rounded-xl border border-slate-800">
+                                <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider">Hackathon Participant</span>
+                                <h4 class="text-base font-bold text-white mt-1">Avishkar 2.0 Inter-College Hackathon</h4>
+                                <p class="text-xs text-slate-400 mt-1">Collaborated with a multi-disciplinary team to architect and present a real-world technical solution.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 border-t border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">Get In Touch</h2>
+                    <p class="text-3xl sm:text-4xl font-bold text-white">Let's Connect</p>
+                    <p class="text-slate-400 text-sm mt-2">Open to entry-level Database Analyst & Data Analyst opportunities.</p>
+                    <div class="w-16 h-1 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    
+                    <!-- Contact Cards -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="glass-card p-6 rounded-2xl flex items-center gap-4">
+                            <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase">Direct Email</p>
+                                <a href="mailto:gayatri.ambhorkar0905@gmail.com" class="text-sm font-semibold text-white hover:text-cyan-400 transition-colors">
+                                    gayatri.ambhorkar0905@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-2xl flex items-center gap-4">
+                            <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase">Phone Number</p>
+                                <a href="tel:+918668905069" class="text-sm font-semibold text-white hover:text-cyan-400 transition-colors">
+                                    +91 8668905069
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-2xl flex items-center gap-4">
+                            <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase">Location</p>
+                                <p class="text-sm font-semibold text-white">Nagpur, Maharashtra, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Message Form -->
+                    <div class="lg:col-span-7 glass-card p-6 sm:p-8 rounded-2xl">
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Your Name</label>
+                                    <input type="text" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl bg-navy-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Your Email</label>
+                                    <input type="email" required placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-xl bg-navy-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Subject</label>
+                                <input type="text" required placeholder="Entry-Level Database Analyst Role Inquiry" class="w-full px-4 py-2.5 rounded-xl bg-navy-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Message</label>
+                                <textarea rows="4" required placeholder="Hi Gayatri, I reviewed your portfolio and would like to discuss..." class="w-full px-4 py-2.5 rounded-xl bg-navy-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-navy-950 font-bold transition-all shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                                Send Message
+                            </button>
+                        </form>
+
+                        <div id="form-response" class="hidden mt-4 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs text-center font-medium">
+                            Thank you! Your message query has been prepared. You can also reach out directly via email at gayatri.ambhorkar0905@gmail.com.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-950 border-t border-slate-800 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Gayatri Ambhorkar. Portfolio built for Data Analytics & Database Engineering.</p>
+            <div class="flex items-center gap-4">
+                <a href="#hero" class="text-slate-400 hover:text-cyan-400 transition-colors">Back to Top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Project Filtering Logic
+        function filterProjects(tag) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-cyan-500', 'text-navy-950');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            event.target.classList.remove('bg-slate-800', 'text-slate-300');
+            event.target.classList.add('bg-cyan-500', 'text-navy-950');
+
+            cards.forEach(card => {
+                const tags = card.getAttribute('data-tags');
+                if (tag === 'all' || tags.includes(tag)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const response = document.getElementById('form-response');
+            response.classList.remove('hidden');
+            event.target.reset();
+            setTimeout(() => {
+                response.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
